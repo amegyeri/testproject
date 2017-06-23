@@ -99,10 +99,9 @@ anything_start() {
 		if anything_status
 		then
 			ocf_log info "$process: $cmd started successfully, calling monitor"
-			#return $OCF_SUCCESS
 			anything_monitor
-			myres=$?
-			return $myres
+			res=$?
+			return $res
 		else 
 			ocf_log err "$process: $cmd could not be started"
 			return $OCF_ERR_GENERIC
